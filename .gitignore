@@ -1,0 +1,13 @@
+# Archivos temporales de Word/WPS
+~$*
+*.tmp
+
+# Scripts de generacion (no forman parte de la entrega)
+_scripts_generacion/
+
+# ZIPs generados
+*.zip
+
+# Sistema
+.DS_Store
+Thumbs.db
