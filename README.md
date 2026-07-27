@@ -51,6 +51,24 @@ nmcli connection up "Wired connection 1"
 
 Los archivos de configuración completos (named.conf, dhcpd.conf, etc.) están en la sección "Procedimiento de instalación" del documento técnico.
 
+## Nota sobre credenciales
+
+`web/usuarios.php` lee la contraseña de MariaDB desde la variable de entorno `DB_PASS`
+en lugar de tenerla escrita en el código. Para configurarla en el servidor:
+
+```bash
+# /etc/httpd/conf.d/app.conf
+SetEnv DB_PASS "tu_contrasena"
+```
+
+```bash
+systemctl restart httpd
+```
+
+Durante el desarrollo del proyecto se usó `admin123` como contraseña de la VM local
+de práctica. En un entorno real debe usarse una contraseña fuerte y un usuario de BD
+con permisos limitados (no `root`).
+
 ## Estructura del repositorio
 
 ```

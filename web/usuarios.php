@@ -2,7 +2,9 @@
 // usuarios.php - Consulta y muestra los usuarios de la tabla app_db.usuarios
 // Proyecto 3DSM-G2 - Elvis
 
-$conn = new mysqli("localhost", "root", "admin123", "app_db");
+// La contrasena se lee de la variable de entorno DB_PASS para no exponerla en el codigo.
+// Configurar en /etc/httpd/conf.d/app.conf con:  SetEnv DB_PASS "tu_contrasena"
+$conn = new mysqli("localhost", "root", getenv("DB_PASS"), "app_db");
 if ($conn->connect_error) {
     die("Error de conexion: " . $conn->connect_error);
 }
