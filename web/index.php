@@ -3,10 +3,19 @@
 // Proyecto 3DSM-G2 - Elvis Ragel Toledo Aleman
 //
 // La contrasena se lee de la variable de entorno DB_PASS para no exponerla
-// en el codigo fuente. Configurar en /etc/httpd/conf.d/app.conf con:
-//     SetEnv DB_PASS "tu_contrasena"
+// en el codigo fuente. Configurar en el pool de PHP-FPM:
+//     /etc/php-fpm.d/www.conf  ->  env[DB_PASS] = tu_contrasena
+// o bien en Apache:
+//     /etc/httpd/conf.d/app.conf  ->  SetEnv DB_PASS "tu_contrasena"
+//
+// Se consultan ambas fuentes porque, segun el SAPI utilizado (mod_php o
+// PHP-FPM), la variable puede llegar por el entorno o como parametro FastCGI.
+$db_pass = getenv("DB_PASS");
+if ($db_pass === false || $db_pass === "") {
+    $db_pass = $_SERVER["DB_PASS"] ?? "";
+}
 
-$conn = new mysqli("localhost", "root", getenv("DB_PASS"), "app_db");
+$conn = new mysqli("localhost", "root", $db_pass, "app_db");
 
 if ($conn->connect_error) {
     die("Error de conexion a la base de datos: " . $conn->connect_error);

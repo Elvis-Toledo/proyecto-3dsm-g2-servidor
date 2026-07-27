@@ -3,8 +3,13 @@
 // Proyecto 3DSM-G2 - Elvis
 
 // La contrasena se lee de la variable de entorno DB_PASS para no exponerla en el codigo.
-// Configurar en /etc/httpd/conf.d/app.conf con:  SetEnv DB_PASS "tu_contrasena"
-$conn = new mysqli("localhost", "root", getenv("DB_PASS"), "app_db");
+// Configurar en /etc/php-fpm.d/www.conf con:  env[DB_PASS] = tu_contrasena
+$db_pass = getenv("DB_PASS");
+if ($db_pass === false || $db_pass === "") {
+    $db_pass = $_SERVER["DB_PASS"] ?? "";
+}
+
+$conn = new mysqli("localhost", "root", $db_pass, "app_db");
 if ($conn->connect_error) {
     die("Error de conexion: " . $conn->connect_error);
 }
