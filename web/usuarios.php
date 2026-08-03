@@ -1,6 +1,6 @@
 <?php
 // usuarios.php - Consulta y muestra los usuarios de la tabla app_db.usuarios
-// Proyecto 3DSM-G2 - Elvis
+// Proyecto 3DSM-G2 - Elvis Ragel Toledo Aleman / Julio Cesar Lugo Rodriguez
 
 // La contrasena se lee de la variable de entorno DB_PASS para no exponerla en el codigo.
 // Configurar en /etc/php-fpm.d/www.conf con:  env[DB_PASS] = tu_contrasena

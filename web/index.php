@@ -1,6 +1,6 @@
 <?php
 // index.php - Aplicacion web de gestion de usuarios
-// Proyecto 3DSM-G2 - Elvis Ragel Toledo Aleman
+// Proyecto 3DSM-G2 - Elvis Ragel Toledo Aleman / Julio Cesar Lugo Rodriguez
 //
 // La contrasena se lee de la variable de entorno DB_PASS para no exponerla
 // en el codigo fuente. Configurar en el pool de PHP-FPM:
@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <footer>
         Servidor: www.empresa.local (192.168.0.10) &middot; CentOS Stream 9<br>
-        Proyecto 3DSM-G2 &middot; Elvis Ragel Toledo Aleman
+        Proyecto 3DSM-G2 &middot; Elvis Ragel Toledo Aleman &middot; Julio Cesar Lugo Rodriguez
     </footer>
 </div>
 </body>

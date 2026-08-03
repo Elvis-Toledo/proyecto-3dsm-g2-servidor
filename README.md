@@ -4,7 +4,14 @@
 
 Desarrollo y despliegue de una aplicación web con base de datos sobre un servidor CentOS Stream 9, integrando servicios de red (DNS, DHCP, HTTP, SSH, MariaDB) y control de versiones con Git/GitHub.
 
-**Autor:** Elvis Ragel Toledo Aleman — Grupo 3DSM-G2
+**Integrantes:**
+
+| Nombre | Roles |
+|---|---|
+| Elvis Ragel Toledo Aleman | Líder de proyecto · DevOps · Backend |
+| Julio Cesar Lugo Rodriguez | Frontend · Documentación |
+
+**Grupo:** 3DSM-G2
 
 ---
 
@@ -100,7 +107,7 @@ En un entorno real debe usarse un usuario de BD con permisos limitados (no `root
 
 ## Flujo de trabajo con Git
 
-El proyecto se desarrolló de forma individual, aplicando el flujo colaborativo de *feature branches* y Pull Requests:
+Se aplicó el flujo colaborativo de *feature branches* y Pull Requests:
 
 ```bash
 git checkout -b feature/nombre-funcionalidad
