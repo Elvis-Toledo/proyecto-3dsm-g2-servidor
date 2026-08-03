@@ -1,6 +1,6 @@
 #!/bin/bash
 # limpieza.sh - Automatiza la limpieza de archivos temporales
-# Proyecto 3DSM-G2 - Elvis
+# Proyecto 3DSM-G2 - Elvis Ragel Toledo Aleman / Julio Cesar Lugo Rodriguez
 # Programado en cron para ejecutarse diariamente a las 8:00 AM
 
 echo "Limpiando archivos temporales..."
